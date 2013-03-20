@@ -1,6 +1,6 @@
-﻿namespace GoalLine.Dto
+﻿namespace GoalLine.Model
 {
-    public class MasterGameDto
+    public class MasterGame
     {
         public string Date { get; set; }
         public string Day { get; set; }

@@ -42,5 +42,13 @@ namespace GoalLine.BL.Test
 
             Assert.AreNotEqual(0, teams.Count, "No team schedule records generated.");
         }
+
+        [TestMethod]
+        public void TestGenerateTeamSchedulesImport()
+        {
+            var teams = Import.GenerateTeamSchedules(FileName);
+
+            Assert.AreNotEqual(0, teams.Count, "No team schedule records generated.");
+        }
     }
 }

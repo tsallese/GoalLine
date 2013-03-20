@@ -43,9 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GoalLine.Dto\GoalLine.Dto.csproj">
+    <ProjectReference Include="..\GoalLine.Dto\GoalLine.Model.csproj">
       <Project>{DA96EAF5-7B31-49FE-B0C7-60A780E6CBCD}</Project>
-      <Name>GoalLine.Dto</Name>
+      <Name>GoalLine.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

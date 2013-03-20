@@ -5,9 +5,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalLine.UI", "GoalLine\Goa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalLine.BL", "GoalLine.BL\GoalLine.BL.csproj", "{74671118-875D-4DCE-8DDA-95D44B29BDDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalLine.Dto", "GoalLine.Dto\GoalLine.Dto.csproj", "{DA96EAF5-7B31-49FE-B0C7-60A780E6CBCD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalLine.Model", "GoalLine.Dto\GoalLine.Model.csproj", "{DA96EAF5-7B31-49FE-B0C7-60A780E6CBCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalLine.BL.Test", "GoalLine.BL.Test\GoalLine.BL.Test.csproj", "{2332DD5C-1329-462C-9AE6-951380D50058}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoalLine.ViewModel", "GoalLine.ViewModel\GoalLine.ViewModel.csproj", "{3F3D7EAF-6819-4F64-A4C1-884F37451CB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{2332DD5C-1329-462C-9AE6-951380D50058}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2332DD5C-1329-462C-9AE6-951380D50058}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2332DD5C-1329-462C-9AE6-951380D50058}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F3D7EAF-6819-4F64-A4C1-884F37451CB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3D7EAF-6819-4F64-A4C1-884F37451CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3D7EAF-6819-4F64-A4C1-884F37451CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3D7EAF-6819-4F64-A4C1-884F37451CB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

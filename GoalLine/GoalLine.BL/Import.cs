@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using GoalLine.Dto;
+using GoalLine.Model;
 
 namespace GoalLine.BL
 {
@@ -17,10 +17,10 @@ namespace GoalLine.BL
         private const int Notes = 7;
         private const int Confirmed = 8;
 
-        public static List<MasterGameDto> FromFile(string fileName)
+        public static List<MasterGame> FromFile(string fileName)
         {
             var reader = new StreamReader(File.OpenRead(fileName));
-            var dtos = new List<MasterGameDto>();
+            var dtos = new List<MasterGame>();
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
@@ -31,7 +31,7 @@ namespace GoalLine.BL
                     string.IsNullOrEmpty(values[EventType]) || values[GameDate].Contains("DATE") ||
                     values[EventType].Contains("PRACTICE")) continue;
 
-                var dto = new MasterGameDto
+                var dto = new MasterGame
                     {
                         Date = values[GameDate],
                         Day = values[GameDay],
@@ -50,13 +50,13 @@ namespace GoalLine.BL
             return dtos;
         }
 
-        public static List<GameDto> ConvertMasterGameDto(List<MasterGameDto> masterGameDtos)
+        public static List<Game> ConvertMasterGameDto(List<MasterGame> masterGameDtos)
         {
-            var gameDtos = new List<GameDto>();
+            var gameDtos = new List<Game>();
 
             foreach (var masterGameDto in masterGameDtos)
             {
-                var gameDto = new GameDto
+                var gameDto = new Game
                     {
                         ByhTeam = masterGameDto.ByhTeam,
                         Venue = masterGameDto.Location,
@@ -91,7 +91,14 @@ namespace GoalLine.BL
             return gameDtos;
         }
 
-        public static List<TeamSchedule> GenerateTeamSchedules(List<GameDto> gameDtos)
+        public static List<TeamSchedule> GenerateTeamSchedules(string fileName)
+        {
+            var masterDtos = FromFile(fileName);
+            var gameDtos = ConvertMasterGameDto(masterDtos);
+            return GenerateTeamSchedules(gameDtos);
+        }
+
+        public static List<TeamSchedule> GenerateTeamSchedules(List<Game> gameDtos)
         {
             var teams = new List<TeamSchedule>();
 

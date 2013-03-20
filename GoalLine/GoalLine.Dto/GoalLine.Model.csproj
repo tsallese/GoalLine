@@ -7,8 +7,8 @@
     <ProjectGuid>{DA96EAF5-7B31-49FE-B0C7-60A780E6CBCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GoalLine.Dto</RootNamespace>
-    <AssemblyName>GoalLine.Dto</AssemblyName>
+    <RootNamespace>GoalLine.Model</RootNamespace>
+    <AssemblyName>GoalLine.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,8 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameDto.cs" />
-    <Compile Include="MasterGameDto.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="MasterGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeamSchedule.cs" />
     <Compile Include="TeamScheduleOrderring.cs" />

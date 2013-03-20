@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace GoalLine.Dto
+namespace GoalLine.Model
 {
     public class TeamScheduleOrderring: IComparer<TeamSchedule>
     {

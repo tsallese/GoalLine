@@ -1,6 +1,6 @@
-﻿namespace GoalLine.Dto
+﻿namespace GoalLine.Model
 {
-    public class GameDto
+    public class Game
     {
         public string ByhTeam { get; set; }
         public string HomeTeam { get; set; }

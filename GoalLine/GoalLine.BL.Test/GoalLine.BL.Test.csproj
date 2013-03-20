@@ -58,9 +58,9 @@
       <Project>{74671118-875d-4dce-8dda-95d44b29bddd}</Project>
       <Name>GoalLine.BL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GoalLine.Dto\GoalLine.Dto.csproj">
+    <ProjectReference Include="..\GoalLine.Dto\GoalLine.Model.csproj">
       <Project>{da96eaf5-7b31-49fe-b0c7-60a780e6cbcd}</Project>
-      <Name>GoalLine.Dto</Name>
+      <Name>GoalLine.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
