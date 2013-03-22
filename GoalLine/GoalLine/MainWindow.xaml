@@ -1,49 +1,40 @@
 ﻿<Window x:Class="GoalLine.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Master Schedule" Height="592" Width="727">
+        Title="Master Schedule" Height="592" Width="868">
+ 
     <Grid>
-        <Button Content="Upload" HorizontalAlignment="Left" Margin="473,517,0,0" VerticalAlignment="Top" Width="109" Height="34"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="600,517,0,0" VerticalAlignment="Top" Width="109" Height="34" Command="{Binding ExitCommand}"/>
-        <DataGrid  ItemsSource="{Binding TeamSchedules}" 
-                   SelectionMode="Extended" SelectionUnit="Cell"
-                   HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="17.167,8.231" Height="499" Width="699">
-         </DataGrid>
-        <ListView ItemsSource="{Binding TeamSchedules}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="2"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="5" />
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="{Binding Name}" Grid.Column="0"/>
-                        <TextBlock Text="{Binding GameCount}" Grid.Column="1"/>
-                        <ListView ItemsSource="{Binding Schedule}" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0" BorderThickness="0">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition Width="5"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock Text="{Binding StartDate}" Grid.Column="0"/>
-                                        <TextBlock Text="{Binding Venue}" Grid.Column="2"/>
-                                    </Grid>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
-                    </Grid>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Button Content="Upload" HorizontalAlignment="Right" Margin="0,0,124,10" VerticalAlignment="Bottom" Width="109" Height="34" RenderTransformOrigin="-1.064,7.324"/>
+        <Button Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="109" Height="34" Command="{Binding ExitCommand}"/>
 
+        <TreeView ItemsSource="{Binding TeamSchedules}" 
+                 Margin="10,10,10,67"  >
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Schedule}">
+                    <StackPanel HorizontalAlignment="Left">
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                <HierarchicalDataTemplate.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="80"  />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Path=HomeTeam}" />
+                            <TextBlock Grid.Column="1"  Text="{Binding Path=VisitorTeam}" />
+                            <TextBlock Grid.Column="2" Text="{Binding Path=Venue}" />
+                            <TextBlock Grid.Column="3" Text="{Binding Path=StartDate}" />
+                            <TextBlock Grid.Column="4" HorizontalAlignment="Right" Text="{Binding Path=StartTime}" />
+                        </Grid>
+                   </DataTemplate>
+                </HierarchicalDataTemplate.ItemTemplate>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+
+        </TreeView>
     </Grid>
 </Window>
