@@ -4,13 +4,18 @@
         Title="Master Schedule" Height="592" Width="868">
  
     <Grid>
-        <Button Content="Upload" HorizontalAlignment="Right" Margin="0,0,124,10" VerticalAlignment="Bottom" Width="109" Height="34" RenderTransformOrigin="-1.064,7.324"/>
+        <Button Content="Export" HorizontalAlignment="Right" Margin="0,0,124,10" VerticalAlignment="Bottom" Width="109" Height="34" RenderTransformOrigin="-1.064,7.324" Command="{Binding ExportCommand}"/>
         <Button Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="109" Height="34" Command="{Binding ExitCommand}"/>
 
         <TreeView ItemsSource="{Binding TeamSchedules}" 
-                 Margin="10,10,10,67"  >
+                 Margin="10,10,10,67" >
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+                </Style>
+            </TreeView.ItemContainerStyle>
             <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Schedule}">
+                <HierarchicalDataTemplate ItemsSource="{Binding Games}">
                     <StackPanel HorizontalAlignment="Left">
                         <TextBlock Text="{Binding Name}"/>
                     </StackPanel>

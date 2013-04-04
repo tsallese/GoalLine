@@ -1,5 +1,4 @@
-﻿using System.Windows.Data;
-using GoalLine.ViewModel;
+﻿using GoalLine.ViewModel.ViewModel;
 
 namespace GoalLine
 {
@@ -10,7 +9,7 @@ namespace GoalLine
     {
         public MainWindow()
         {
-            var context = new TeamScheduleViewModel {FileName = @"C:\Projects\GoalLine\Import\BYH MASTER SCHEDULE.csv"};
+            var context = new MainViewModel { FileName = @"C:\Projects\GoalLine\Import\BYH MASTER SCHEDULE.csv" };
             DataContext = context;
             InitializeComponent();
         }

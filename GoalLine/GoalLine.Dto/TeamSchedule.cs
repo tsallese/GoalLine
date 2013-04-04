@@ -6,11 +6,11 @@ namespace GoalLine.Model
     {
         public TeamSchedule()
         {
-            Schedule = new List<Game>();
+            Games = new List<Game>();
         }
 
         public string Name { get; set; }
-        public List<Game> Schedule { get; set; }
-        public int GameCount { get { return Schedule.Count; } }
+        public List<Game> Games { get; set; }
+        public int GameCount { get { return Games.Count; } }
     }
 }

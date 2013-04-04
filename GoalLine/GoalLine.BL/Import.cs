@@ -111,7 +111,7 @@ namespace GoalLine.BL
                     team = new TeamSchedule {Name = gameDto.ByhTeam};
                     teams.Add(team);
                 }
-                team.Schedule.Add(gameDto);
+                team.Games.Add(gameDto);
             }
 
             IComparer<TeamSchedule> comparer = new TeamScheduleOrderring();
