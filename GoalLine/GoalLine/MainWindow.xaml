@@ -16,8 +16,19 @@
             </TreeView.ItemContainerStyle>
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Games}">
-                    <StackPanel HorizontalAlignment="Left">
-                        <TextBlock Text="{Binding Name}"/>
+                    <StackPanel HorizontalAlignment="Left" Margin="0,0,0,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="190" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="{Binding Path=Name}" />
+                            <TextBlock Grid.Column="1"  Text="{Binding Path=GameCount}" />
+                            <TextBlock Grid.Column="2"  Text="{Binding Path=LeagueGameCount}"  Margin="15,0,0,0"/>
+                            <TextBlock Grid.Column="3"  Text="{Binding Path=NonLeagueGameCount}" Margin="15,0,0,0" />
+                        </Grid>
                     </StackPanel>
                 <HierarchicalDataTemplate.ItemTemplate>
                     <DataTemplate>
@@ -27,14 +38,16 @@
                                     <ColumnDefinition Width="200" />
                                     <ColumnDefinition Width="200" />
                                     <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="80"  />
-                            </Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Text="{Binding Path=HomeTeam}" />
                             <TextBlock Grid.Column="1"  Text="{Binding Path=VisitorTeam}" />
                             <TextBlock Grid.Column="2" Text="{Binding Path=Venue}" />
                             <TextBlock Grid.Column="3" Text="{Binding Path=StartDate}" />
-                            <TextBlock Grid.Column="4" HorizontalAlignment="Right" Text="{Binding Path=StartTime}" />
-                        </Grid>
+                                <TextBlock Grid.Column="4" HorizontalAlignment="Right" Text="{Binding Path=StartTime}" />
+                                <TextBlock Grid.Column="5" Text="{Binding Path=LeagueName}" Margin="15,0,0,0"/>
+                            </Grid>
                    </DataTemplate>
                 </HierarchicalDataTemplate.ItemTemplate>
                 </HierarchicalDataTemplate>

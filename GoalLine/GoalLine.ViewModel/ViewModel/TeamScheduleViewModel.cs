@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using GoalLine.Model;
 
 namespace GoalLine.ViewModel.ViewModel
@@ -26,8 +28,30 @@ namespace GoalLine.ViewModel.ViewModel
             }
         }
 
-        public int  GameCount { get; set; }
+        public string GameCount
+        {
+            get { return string.Format("Games: {0}", Games.Count); }
+        }
 
+        public string LeagueGameCount
+        {
+            get
+            {
+                var count = Games.Count(game => game.LeagueName.Trim().StartsWith("L",StringComparison.OrdinalIgnoreCase));
+
+                return string.Format("League Games: {0}", count);
+            }
+        }
+
+        public string NonLeagueGameCount
+        {
+            get
+            {
+                var count = Games.Count(game => game.LeagueName.Trim().StartsWith("Non", StringComparison.OrdinalIgnoreCase));
+
+                return string.Format("Non League Games: {0}", count);
+            }
+        }
         public ObservableCollection<GameViewModel> Games { get; set; }
     }
 }
