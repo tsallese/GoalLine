@@ -12,7 +12,6 @@ namespace GoalLine
             var context = new MainViewModel { FileName = @"C:\Projects\GoalLine\Import\BYH MASTER SCHEDULE.csv" };
             DataContext = context;
             InitializeComponent();
-
         }
     }
 }
